@@ -16,7 +16,7 @@ const About = dynamic(() => import('@/pages/About'), {
 	suspense: true,
 });
 
-const Education = dynamic(() => import('@/pages/Education'), {
+const Projects = dynamic(() => import('@/pages/Projects'), {
 	loading: () => <Loading />,
 	ssr: false,
 	suspense: true,
@@ -34,13 +34,13 @@ const Skills = dynamic(() => import('@/pages/Skills'), {
 	suspense: true,
 });
 
-const Projects = dynamic(() => import('@/pages/Projects'), {
+const Certificates = dynamic(() => import('@/pages/Certificates'), {
 	loading: () => <Loading />,
 	ssr: false,
 	suspense: true,
 });
 
-const Certificates = dynamic(() => import('@/pages/Certificates'), {
+const Education = dynamic(() => import('@/pages/Education'), {
 	loading: () => <Loading />,
 	ssr: false,
 	suspense: true,
@@ -66,8 +66,8 @@ export default function HomePage() {
 				</section>
 			</Suspense>
 			<Suspense fallback={<Loading />}>
-				<section id="education" className="w-full">
-					<Education />
+				<section id="projects" className="w-full">
+					<Projects />
 				</section>
 			</Suspense>
 			<Suspense fallback={<Loading />}>
@@ -81,13 +81,13 @@ export default function HomePage() {
 				</section>
 			</Suspense>
 			<Suspense fallback={<Loading />}>
-				<section id="projects" className="w-full">
-					<Projects />
+				<section id="certificates" className="w-full">
+					<Certificates />
 				</section>
 			</Suspense>
 			<Suspense fallback={<Loading />}>
-				<section id="certificates" className="w-full">
-					<Certificates />
+				<section id="education" className="w-full">
+					<Education />
 				</section>
 			</Suspense>
 			<Suspense fallback={<Loading />}>

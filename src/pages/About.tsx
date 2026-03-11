@@ -1,37 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Code2, Briefcase, GraduationCap, Award, Users, Globe } from 'lucide-react';
 import { ScrollAnimation } from '@/components/ScrollAnimation';
 
 const About = () => {
-	const achievements = [
-		{
-			icon: <Briefcase className="w-6 h-6" />,
-			title: "4+ Years",
-			description: "Professional experience"
-		},
-		{
-			icon: <Code2 className="w-6 h-6" />,
-			title: "Microservices",
-			description: "Scalable backend systems"
-		},
-		{
-			icon: <GraduationCap className="w-6 h-6" />,
-			title: "M.Sc. Big Data",
-			description: "Advanced analytics expertise"
-		}
-	];
-
-	const interests = [
-		"Backend Development",
-		"Microservices Architecture",
-		"Cloud Computing",
-		"DevOps & CI/CD",
-		"Data Engineering",
-		"System Design"
-	];
-
 	return (
 		<div className="min-h-screen pt-20 px-4 max-w-4xl mx-auto pb-20">
 			<ScrollAnimation>
@@ -60,7 +32,7 @@ const About = () => {
 							Experienced with relational and NoSQL databases, continuous integration pipelines, and automated testing to maintain code quality. Collaborative team player with strong problem-solving ability and a focus on writing maintainable, high-performance software that enhances reliability and security.
 						</p>
 						<p className="text-gray-300 leading-relaxed">
-							I hold a Master's degree in Big Data Analytics from Trent University, Canada, which complements my practical experience in building data-intensive applications and real-time analytics systems.
+							I hold a Master&apos;s degree in Big Data Analytics from Trent University, Canada, which complements my practical experience in building data-intensive applications and real-time analytics systems.
 						</p>
 					</div>
 
@@ -68,7 +40,7 @@ const About = () => {
 						<div className="pt-4">
 							<h3 className="text-2xl font-semibold mb-4 gradient-text">Quick Facts</h3>
 							<ul className="list-none space-y-3">
-								{["Based in Toronto, Ontario, Canada", "M.Sc. Big Data Analytics", "4+ Years Experience"].map((fact, index) => (
+								{["Based in Toronto, Ontario, Canada", "M.Sc. Big Data Analytics", "4+ Years Experience"].map((fact) => (
 									<motion.li
 										key={fact}
 										className="flex items-center space-x-2 text-gray-300"
@@ -112,39 +84,6 @@ const About = () => {
 					</ScrollAnimation>
 				</ScrollAnimation>
 			</div>
-
-			<ScrollAnimation>
-				<div className="mt-16">
-					<h3 className="text-2xl font-semibold mb-8 gradient-text">Achievements</h3>
-					<div className="grid md:grid-cols-3 gap-6">
-						{achievements.map((achievement, index) => (
-							<ScrollAnimation key={achievement.title}>
-								<div className="bg-white/5 p-6 rounded-xl backdrop-blur-sm">
-									<div className="text-white mb-4">{achievement.icon}</div>
-									<h4 className="text-xl font-semibold mb-2">{achievement.title}</h4>
-									<p className="text-gray-400">{achievement.description}</p>
-								</div>
-							</ScrollAnimation>
-						))}
-					</div>
-				</div>
-			</ScrollAnimation>
-
-			<ScrollAnimation>
-				<div className="mt-16">
-					<h3 className="text-2xl font-semibold mb-8 gradient-text">Areas of Interest</h3>
-					<div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-						{interests.map((interest, index) => (
-							<ScrollAnimation key={interest}>
-								<div className="bg-white/5 p-4 rounded-xl backdrop-blur-sm flex items-center gap-3">
-									<Globe className="w-5 h-5 text-gray-400" />
-									<span className="text-gray-300">{interest}</span>
-								</div>
-							</ScrollAnimation>
-						))}
-					</div>
-				</div>
-			</ScrollAnimation>
 		</div>
 	);
 };

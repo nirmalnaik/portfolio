@@ -13,11 +13,11 @@ const Navbar = () => {
 	const navLinks = [
 		{ path: '#home', label: 'Home', id: 'home' },
 		{ path: '#about', label: 'About', id: 'about' },
-		{ path: '#education', label: 'Education', id: 'education' },
+		{ path: '#projects', label: 'Projects', id: 'projects' },
 		{ path: '#experience', label: 'Experience', id: 'experience' },
 		{ path: '#skills', label: 'Skills', id: 'skills' },
-		{ path: '#projects', label: 'Projects', id: 'projects' },
 		{ path: '#certificates', label: 'Certificates', id: 'certificates' },
+		{ path: '#education', label: 'Education', id: 'education' },
 		{ path: '#contact', label: 'Contact', id: 'contact' }
 	];
 

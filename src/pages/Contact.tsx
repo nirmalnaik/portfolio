@@ -15,28 +15,29 @@ const Contact = () => {
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-	const handleSubmit = async (e: React.FormEvent) => {
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		setIsSubmitting(true);
 		setSubmitStatus('idle');
 
 		try {
-			const response = await fetch('/api/contact', {
+			const form = new FormData(e.target as HTMLFormElement);
+			form.append('access_key', '3618f1f2-7746-4a3f-a1e7-f5e59eea30ef');
+
+			const response = await fetch('https://api.web3forms.com/submit', {
 				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(formData),
+				body: form,
 			});
 
 			const data = await response.json();
 
-			if (response.ok) {
+			if (data.success) {
 				setSubmitStatus('success');
 				setFormData({ name: '', email: '', subject: '', message: '' });
+				(e.target as HTMLFormElement).reset();
 			} else {
 				setSubmitStatus('error');
-				console.error('Error:', data.error);
+				console.error('Web3Forms error:', data.message);
 			}
 		} catch (error) {
 			console.error('Error submitting form:', error);

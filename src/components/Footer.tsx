@@ -15,7 +15,6 @@ const Footer = () => {
 		{ name: 'Projects', path: '#projects', isAnchor: true },
 		{ name: 'Certificates', path: '#certificates', isAnchor: true },
 		{ name: 'Contact', path: '#contact', isAnchor: true },
-		{ name: 'Kali Linux', path: '/kali', isAnchor: false },
 	];
 
 	const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
